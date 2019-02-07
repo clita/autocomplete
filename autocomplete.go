@@ -104,9 +104,9 @@ func (m MatchList) Less(i, j int) bool {
     return (m[i].Frequency)*(m[i].Similarity) > (m[j].Frequency)*(m[j].Similarity)
 }
 
-func Init(training_file string) {
-	similarityThreshold = 0.3
-	maxResults = 5
+func Init(threshold float64, maxres int, training_file string) {
+	similarityThreshold = threshold
+	maxResults = maxres
 	datasource = prefixmap.New()
 
 	// Entering values into WordMap
@@ -175,6 +175,6 @@ func Autocomplete(input string, printbool bool) []Match {
 // 		os.Exit(1)
 // 	}
 
-// 	Init("autocomplete.txt")
+// 	Init(0.3, 5, "autocomplete.txt")
 // 	Autocomplete(input, true)
 // }
