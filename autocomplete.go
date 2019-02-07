@@ -38,7 +38,7 @@ func minimum(value0 int, values ...int) int {
 }
 
 func (match Match) Print() {
-	fmt.Printf("match: \t%s\tfrequency: \t%.0f\tsimilarity: %.2f\t\n", match.Value, match.Frequency, match.Similarity)
+	fmt.Printf("match: %s\tfrequency: %.0f\tsimilarity: %.2f\t\n", match.Value, match.Frequency, match.Similarity)
 }
 
 // Print matches (maximum = maxResults)
@@ -160,7 +160,7 @@ func Autocomplete(input string, printbool bool) []Match {
 	sort.Sort(MatchList(results))
 
 	if printbool {
-		fmt.Printf("Results (maximum 5) for target similarity: %.2f\n", similarityThreshold)
+		fmt.Printf("Results (maximum %d) for target similarity: %.2f\n", maxResults, similarityThreshold)
 		PrintMatches(results)
 	}
 
