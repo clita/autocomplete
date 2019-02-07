@@ -119,7 +119,7 @@ func Init(threshold float64, maxres int, training_file string) {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
-	wordPattern := regexp.MustCompile("^[0-9a-zA-Z']+\\s[a-zA-Z']+")
+	wordPattern := regexp.MustCompile("^[0-9a-zA-Z']+(\\s)?[a-zA-Z']+")
 	numberPattern := regexp.MustCompile("\\d+$")
 	for scanner.Scan() {
 		w := wordPattern.FindString(scanner.Text())
@@ -168,13 +168,12 @@ func Autocomplete(input string, printbool bool) []Match {
 }
 
 // func main() {
-// 	flag.Parse()
-// 	input := flag.Arg(0)
+// 	input := "holl"
 // 	if input == "" {
 // 		fmt.Println("Please, specify an input string")
 // 		os.Exit(1)
 // 	}
-
-// 	Init(0.3, 5, "autocomplete.txt")
+	
+// 	Init(0.1, 10, "autocomplete.txt")
 // 	Autocomplete(input, true)
 // }
