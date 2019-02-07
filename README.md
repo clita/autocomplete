@@ -9,7 +9,7 @@ Autocomplete module for clita application.
 
 **Autocomplete Suggestion**  
 ```go
-  autocomplete.Autocomplete("state")
+  autocomplete.Autocomplete("hell")
   
   // Output: 
   // Results (maximum 5) for target similarity: 0.30
